@@ -1,0 +1,131 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000 url("../images/02.jpg") center center fixed no-repeat;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.align-center {
+    margin: auto;
+}
+
+.option {
+    width: 40%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.border {
+    border-bottom: 2px solid #2196F3;
+}
+
+.login-form {
+    max-width: 330px;
+    padding-top: 15px;
+}
+
+.label {
+    float: left;
+    width: 25%;
+    color: white;
+    border: 0px;
+    background-color: #2196F3;
+}
+
+.label:hover {
+    background-color: #5196F3;
+}
+
+.login-form .label {
+    position: relative;
+    height: auto;
+    padding: 10px;
+}
+
+.login-form label[id="username"] {
+    border-top-left-radius: .25rem;
+}
+
+.login-form label[id="account"] {
+    border-radius: 0;
+}
+
+.login-form label[id="password"] {
+    border-bottom-left-radius: .25rem;
+}
+
+.text {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: Noto Sans TC, sans-serif;
+}
+
+.input {
+    float: right;
+    width: 75%;
+    border: 0px;
+    outline: none;
+}
+
+.login-form .input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.login-form input[type="username"] {
+    border-top-right-radius: .25rem;
+}
+
+.login-form input[type="email"] {
+    border-radius: 0;
+}
+
+.login-form input[type="password"] {
+    border-bottom-right-radius: .25rem;
+}
+
+.submit {
+    width: 50%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    background-color: #2196F3;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.submit:hover {
+    background-color: #5196F3;
+}
+
+.hidden {
+    display: none;
+}

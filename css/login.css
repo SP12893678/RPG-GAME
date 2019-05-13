@@ -1,3 +1,6 @@
+:root {
+  --login-panel-height: 300px;
+}
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -29,6 +32,11 @@ body {
 }
 
 .align-center {
+    background:rgba(220,220,220,0.6);
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
 }
 
@@ -40,13 +48,40 @@ body {
     border: none;
     outline: none;
 }
+.option a {
+    position: relative;
+    margin: 0 5px;
+    padding: 0 30% 2px;
+    white-space: nowrap;
+}
+
+.option a:after {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 0;
+    border-bottom: 1px solid #2196F3;
+    content: "";
+    -webkit-transition: width 350ms,left 350ms;
+    -moz-transition: width 350ms,left 350ms;
+    transition: width 350ms,left 350ms;
+}
+
+.option a:hover:after {
+    left: 0;
+    width: 100%;
+    -webkit-transition: width 350ms;
+    -moz-transition: width 350ms;
+    transition: width 350ms;
+}
 .border {
     border-bottom: 2px solid #2196F3;
 }
 
 .login-form {
     max-width: 330px;
-    padding-top: 15px;
+    height: 250px;
+    padding-top: 25px;
 }
 
 .label {
@@ -63,8 +98,8 @@ body {
 
 .login-form .label {
     position: relative;
-    height: auto;
     padding: 10px;
+    height: auto;
 }
 
 .login-form label[id="username"] {
@@ -93,8 +128,9 @@ body {
 }
 
 .login-form .input {
-    padding: 10px;
     font-size: 16px;
+    padding: 10px;
+    height: auto;
 }
 
 .login-form input[type="username"] {

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>index.php</title>
+<title>index</title>
 <style>
     html,
     body 
@@ -41,12 +41,40 @@
     {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
     }
+    .user {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px;
+        border-radius: 100%;
+        background: #555;
+        outline:none;
+        transition: .2s;
+    }
+
+    .user:hover {
+        width: 100px;
+        height: 100px;
+        margin-top: -30px;
+        margin-bottom: 10px;
+    }
+    .user .u
+    {
+        width: 25px;
+        height: 25px;
+        transition: .2s;
+    }
+    .user:hover .u
+    {
+        width: 50px;
+        height: 50px;
+    }
 </style>
 </head>
 <body>
 <!--iframe src="login.php" frameborder="0" scrolling="no" id="login"></iframe-->
     <div class="nav">
-        <button class="login" onclick="javascript:location.href='./login/Login.php'">login page</button>
+        <button class="user" onclick="javascript:location.href='./login/Login.php'"><img class="u" src="images/user.png"></button>
     </div>
 </body>
 </html>

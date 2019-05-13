@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
     <script language="javascript">
-        function Pressed_Option(select,cancel) 
-        {
+        function Pressed_Option(select, cancel) {
             document.getElementById(select).classList.remove("hidden");
             document.getElementById(cancel).classList.add("hidden");
-            document.getElementById(select+" label").classList.add("border");
-            document.getElementById(cancel+" label").classList.remove("border");
+            document.getElementById(select + " label").classList.add("border");
+            document.getElementById(cancel + " label").classList.remove("border");
         }
-        function message_alert(string)
-        {
+
+        function message_alert(string) {
             alert(string);
         }
+
     </script>
     <?php
         //error_reporting(0);
@@ -99,28 +100,30 @@
         }
     ?>
 </head>
+
 <body class="text-center">
     <div class="align-center">
         <div>
-            <button class="option border" onclick="Pressed_Option('sign in','sign up')" id="sign in label">Sign in</button>
-            <button class="option" onclick="Pressed_Option('sign up','sign in')" id="sign up label">Sign up</button>
+            <button class="option" onclick="Pressed_Option('sign in','sign up')"><a class="border" id="sign in label">Sign in</a></button>
+            <button class="option" onclick="Pressed_Option('sign up','sign in')"><a id="sign up label">Sign up</a></button>
         </div>
         <form class="login-form" id="sign in" action="Login.php" method="post">
             <label class="label" id="username"><a class="text">名稱</a></label>
-            <input class="input" type="username" name="Username" size="15" maxlength="12" placeholder="UserName" required="required"/>
+            <input class="input" type="username" name="Username" size="15" maxlength="12" placeholder="UserName" required="required" />
             <label class="label" id="password"><a class="text">密碼</a></label>
-            <input class="input" type="password" name="Password" size="15" maxlength="12" placeholder="Password" required="required"/>
+            <input class="input" type="password" name="Password" size="15" maxlength="12" placeholder="Password" required="required" />
             <div><button class="submit" type="submit">Login</button></div>
         </form>
         <form class="login-form hidden" id="sign up" action="Login.php" method="post">
             <label class="label" id="username"><a class="text">名稱</a></label>
-            <input class="input" type="username" name="Username" size="15" maxlength="12" placeholder="UserName" required="required"/>
+            <input class="input" type="username" name="Username" size="15" maxlength="12" placeholder="UserName" required="required" />
             <label class="label" id="account"><a class="text">Email</a></label>
-            <input class="input" type="email" name="EmailAddress" size="15" maxlength="30" placeholder="Email Address" required="required"/>
+            <input class="input" type="email" name="EmailAddress" size="15" maxlength="30" placeholder="Email Address" required="required" />
             <label class="label" id="password"><a class="text">密碼</a></label>
-            <input class="input" type="password" name="Password" size="15" maxlength="12" placeholder="Password" required="required"/>
+            <input class="input" type="password" name="Password" size="15" maxlength="12" placeholder="Password" required="required" />
             <div><button class="submit" type="submit">Sign up</button></div>
         </form>
     </div>
 </body>
+
 </html>

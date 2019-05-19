@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css">
@@ -21,6 +22,7 @@
     </script>
     <?php
         //error_reporting(0);
+        session_start();  // 啟用交談期
         $username = "";  $password = ""; $email = ""; $submit = false; $type = "none";
         // 取得表單欄位值
         if (isset($_POST["Username"]))
@@ -45,7 +47,7 @@
         if($submit)
         {
             // 建立MySQL的資料庫連接
-            $link = mysqli_connect("localhost","root","","rpg game")
+            $link = mysqli_connect("localhost","ACS106103","653625","test")
                     or die("無法開啟MySQL資料庫連接!<br/>");
             mysqli_query($link, 'SET NAMES utf8'); //送出UTF8編碼的MySQL指令
             if($type == "sign in")
@@ -59,11 +61,13 @@
                // 是否有查詢到使用者記錄
                if ( $total_records > 0 ) 
                {
-                  header("Location: ../RPG Game/rpg game.html");
+                  $_SESSION["login_session"] = true;
+                  header("Location: ../rpg.php");
                } 
                else 
                {  
-                   echo "<script>message_alert('使用者名稱或密碼錯誤!');</script>"; // 登入失敗
+                   $_SESSION["login_session"] = false;
+                   echo "<script>message_alert('使用者名稱或密碼錯誤!');</script>"; // 登入失敗        
                }
                mysqli_close($link);  // 關閉資料庫連接 
             }
@@ -81,7 +85,7 @@
                 {
                     echo "<script>message_alert('使用者名稱已被使用!');</script>";
                 }
-                if($email_records>0)
+                else if($email_records>0)
                 {
                     echo "<script>message_alert('信箱已被使用!');</script>";
                 }

@@ -1,0 +1,201 @@
+<style > 
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    /*display: flex;*/
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000 url("../images/02.jpg") center center fixed no-repeat;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.nav {
+    position: absolute;
+    margin: auto;
+    left: 10%;
+    top: 10%;
+    animation-duration: 0.75s;
+    animation-name: nav;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.nav:hover {
+    animation-play-state: paused;
+}
+
+.nav1 {
+    position: absolute;
+    margin: auto;
+    left: 20%;
+    top: 40%;
+    transform-origin: 50px 50px;
+    animation-duration: 0.75s;
+    animation-name: nav1;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.nav1:hover {
+    animation-play-state: paused;
+}
+
+.nav2 {
+    position: absolute;
+    margin: auto;
+    left: 30%;
+    top: 20%;
+    transform-origin: 50px 50px;
+    animation-duration: 1.5s;
+    animation-name: nav2;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.nav2:hover {
+    animation-play-state: paused;
+}
+
+.option {
+    margin: 25px;
+    z-index: 998;
+    position: absolute;
+    visibility: visible;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #555;
+    outline: none;
+    transform-origin(0, 0);
+    transform: rotate(0);
+    transition: .5s;
+}
+
+.option[id="game"] {
+    background: #e75;
+    border-bottom-color: #f77;
+    border-right-color: #f77;
+}
+
+.option[id="introduce"] {
+    background: #77d;
+    border-bottom-color: #67d;
+    border-right-color: #67d;
+}
+
+.option:hover {
+    transform: rotate(360deg);
+    animation-play-state: paused;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.introduce {
+    visibility: hidden;
+    background-color: white;
+    width: 200px;
+}
+
+.information_bg {
+    background-color: #eeeeee;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.2), 0 8px 15px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    z-index: 997;
+    width: 0px;
+    height: 100px;
+    opacity: 0;
+    transition: 600ms;
+}
+
+.option:hover + .information_bg {
+    width: 300px;
+    height: 100px;
+    opacity: 1;
+    transition: width 350ms;
+}
+
+.information_title {
+    padding-left: 35px;
+    padding-right: 45px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 100px;
+    z-index: 997;
+    position: absolute;
+    text-align: center;
+    border-bottom: 1px solid #999999;
+    opacity: 0;
+    transition: 600ms;
+}
+
+.option:hover ~ .information_title {
+    opacity: 1;
+    transition: 2s;
+}
+
+.information_text {
+    padding-left: 2px;
+    padding-right: 45px;
+    margin-top: 42px;
+    margin-left: 100px;
+    width: 180px;
+    font-size: 12px;
+    color: #999999;
+    z-index: 997;
+    position: absolute;
+    opacity: 0;
+    transition: 600ms;
+}
+
+.option:hover ~ .information_text {
+    opacity: 1;
+    transition: 2s;
+}
+
+.option .option-image {
+    margin-top: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+@keyframes nav {
+    from {
+        top: 10%;
+    }
+
+    to {
+        top: 12%;
+    }
+}
+
+@keyframes nav1 {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes nav2 {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+</style >
